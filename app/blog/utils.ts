@@ -36,22 +36,18 @@ function readMDXFile(filePath) {
 }
 
 function getMDXData(dir) {
-  let mdxFiles = getMDXFiles(dir);
+  let mdxFiles = getMDXFiles(dir)
   return mdxFiles.map((file) => {
-    let { metadata, content } = readMDXFile(path.join(dir, file));
-    
-    // Extract the slug from the filename
-    let slugMatch = file.match(/\d{4}-\d{2}-\d{2}-(.*?).mdx/);
-    let slug = slugMatch ? slugMatch[1] : ''; // Extract the first capturing group
-    
+    let { metadata, content } = readMDXFile(path.join(dir, file))
+    let slug = path.basename(file, path.extname(file))
+
     return {
       metadata,
       slug,
       content,
-    };
-  });
+    }
+  })
 }
-
 
 export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), '_posts'))
