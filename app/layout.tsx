@@ -44,11 +44,13 @@ export default function RootLayout({
       lang="en"
       >
       <body>
+        <Navbar />
         <main>
-          <Navbar />
+          
           {children}
-          <Footer />
+          
         </main>
+        <Footer />
       </body>
     </html>
   )

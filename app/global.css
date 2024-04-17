@@ -1,4 +1,5 @@
- 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Syne:wght@400..800&display=swap');
+
 :root {
   --sh-class: #2d5e9d;
   --sh-identifier: #354150;
@@ -20,3 +21,135 @@
   }
 }
  
+
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+ 
+header {
+  font-family: "Syne", sans-serif;
+}
+nav {
+    gap: 15px;
+    display: flex;
+    a {
+        text-decoration: none;
+        color: #999999;
+        font-weight: 500;
+    }
+    .active {
+      color: #000000;
+    }
+    
+}
+
+main,nav {
+  font-family: "Manrope", sans-serif;
+}
+
+header,main,footer {
+    margin: auto;
+    max-width: 600px;
+    padding: 20px;
+}
+
+ a{
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+ }
+
+ article {
+  p {
+    padding-top: 20px;
+   }
+   h2 {
+    padding-top: 40px;
+  }
+  
+ }
+
+p {
+  font-weight: 500;
+  color: #444444;
+}
+
+main{
+  img {
+    margin: 20px 0;
+    border-radius: 10px;
+    max-width: 100%;
+    box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.1882352941);
+  }
+}
+
+
+hr {
+  border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 20px auto;
+    max-width: min(600px, calc(100% - 40px));
+}
+
+pre {
+  color: white;
+  background-color: #1b2b34;
+  padding: 20px 15px;
+  margin: 30px 0;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+header {
+  > a {
+      display: contents;
+      > img {
+          border-radius: 100rem;
+          display: block;
+      }
+  }
+  @media screen and (min-width: 1200px) {
+      padding-top: 100px;
+  }
+}
+
+
+
+header {
+  time {
+      color: #999999;
+  }
+}
+
+
+.post-list{
+  padding-bottom: 20px;
+  a{
+      color: black;
+      font-size: 18px;
+      &:hover {
+          color: #09f;
+          text-decoration: none;
+      }
+  }
+  span{
+      color: #999999;
+      font-size: 14px;
+  }
+}
